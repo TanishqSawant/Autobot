@@ -14,23 +14,23 @@ CHANNEL_NAME = input("Enter the Twitch channel: ").strip()
 
 TWITCH_STREAM_URL = f"https://www.twitch.tv/{CHANNEL_NAME}"
 
-YOUTUBE_URL = "https://www.youtube.com/live/hwG3bvxkSJQ?si=zQaGBvnyLjlZujAU"
+YOUTUBE_URL = "{youtube url here}"
 
-MESSAGE = "Follow this link to get 10% OFF on boosting service of any game: https :// s.skycoach.gg/ NIGHTMARE"
+MESSAGE = "{The message you want to type continuously here}"
 
 DELAY = 15
 MAX_MESSAGES = 5
 
 # This must be the Twitch account that owns the access token
-TWITCH_SENDER_ID = "1533491568"
+TWITCH_SENDER_ID = "{your twitch user id}"
 
-TWITCH_USERS_URL = "https://api.twitch.tv/helix/users"
-TWITCH_CHAT_URL = "https://api.twitch.tv/helix/chat/messages"
+TWITCH_USERS_URL = "{Twitch users URL}"
+TWITCH_CHAT_URL = "{Twitch chat URL}"
 
 
-# ============================================================
+
 # LOAD TWITCH CREDENTIALS
-# ============================================================
+
 
 load_dotenv()
 
@@ -50,9 +50,9 @@ twitch_headers = {
 }
 
 
-# ============================================================
+
 # GET BROADCASTER ID AUTOMATICALLY
-# ============================================================
+
 
 print("\nLooking up Twitch channel...")
 
@@ -84,9 +84,9 @@ print("Channel:", CHANNEL_NAME)
 print("Broadcaster ID:", TWITCH_BROADCASTER_ID)
 
 
-# ============================================================
+
 # TWITCH FUNCTION
-# ============================================================
+
 
 def send_twitch_message():
 
@@ -128,9 +128,9 @@ def send_twitch_message():
     return False
 
 
-# ============================================================
+
 # YOUTUBE FUNCTION
-# ============================================================
+
 
 def send_youtube_message(page):
 
@@ -160,9 +160,9 @@ def send_youtube_message(page):
     return True
 
 
-# ============================================================
+
 # MAIN PROGRAM
-# ============================================================
+
 
 with sync_playwright() as p:
 
@@ -177,9 +177,9 @@ with sync_playwright() as p:
     print("Connected to Chrome.")
 
 
-    # ========================================================
+    
     # OPEN TWITCH STREAM
-    # ========================================================
+    
 
     print("\nOpening Twitch stream...")
 
@@ -193,9 +193,9 @@ with sync_playwright() as p:
     print("Twitch stream opened.")
 
 
-    # ========================================================
+    
     # OPEN YOUTUBE STREAM
-    # ========================================================
+   
 
     print("\nOpening YouTube stream...")
 
@@ -209,9 +209,9 @@ with sync_playwright() as p:
     print("YouTube stream opened.")
 
 
-    # ========================================================
+    
     # MESSAGE LOOP
-    # ========================================================
+    
 
     count = 0
 
@@ -224,9 +224,9 @@ with sync_playwright() as p:
             print("==============================")
 
 
-            # ------------------------------------------------
+            
             # YOUTUBE
-            # ------------------------------------------------
+            
 
             youtube_success = False
 
@@ -242,9 +242,9 @@ with sync_playwright() as p:
                 print(error)
 
 
-            # ------------------------------------------------
+            
             # TWITCH
-            # ------------------------------------------------
+            
 
             twitch_success = False
 
@@ -258,9 +258,9 @@ with sync_playwright() as p:
                 print(error)
 
 
-            # ------------------------------------------------
+            
             # COUNT
-            # ------------------------------------------------
+            
 
             if youtube_success or twitch_success:
 
@@ -275,9 +275,9 @@ with sync_playwright() as p:
                 print("\nNeither message was sent.")
 
 
-            # ------------------------------------------------
+            
             # WAIT
-            # ------------------------------------------------
+            
 
             if count < MAX_MESSAGES:
 

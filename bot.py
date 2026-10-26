@@ -1,7 +1,7 @@
 from playwright.sync_api import sync_playwright
 import time
 
-YOUTUBE_URL = "https://www.twitch.tv/dota2ti"
+YOUTUBE_URL = "https://www.youtube.com/live/zTffZqrcQ-g?si=iXpbQx2DBC-TH88a"
 MESSAGE = "Hello, From this side!!!"
 
 with sync_playwright() as p:
