@@ -6,9 +6,9 @@ from dotenv import load_dotenv
 from playwright.sync_api import sync_playwright
 
 
-# ============================================================
+
 # SETTINGS
-# ============================================================
+
 
 CHANNEL_NAME = input("Enter the Twitch channel: ").strip()
 
