@@ -1,0 +1,16 @@
+﻿# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+pyvenv.cfg
+
+# Browser profiles and session data
+ChromeProfile/
+browser_data/
+chrome_bot_profile/
